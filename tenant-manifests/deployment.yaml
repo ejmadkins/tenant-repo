@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    tier: front-end
+    app: foo
+  name: foo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: foo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: foo
+        tier: front-end
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

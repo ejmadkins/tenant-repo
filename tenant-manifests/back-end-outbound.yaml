@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: back-end-outbound
+  name: allow-egress-backend
 spec:
   podSelector:
     matchLabels:
-      tier: back-end
+      app: foo
   policyTypes:
   - Egress
   egress:
   - to:
     - ipBlock:
-        cidr: 10.0.0.100/32
+        cidr: 34.65.54.160/32
     ports:
     - protocol: TCP
-      port: 3306
+      port: 80
