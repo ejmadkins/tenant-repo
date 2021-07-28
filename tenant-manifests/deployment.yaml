@@ -20,8 +20,9 @@ spec:
         tier: front-end
     spec:
       containers:
-      - image: nginx
-        name: nginx
-        ports:
-        - containerPort: 80
+      - name: nginx
+        image: "gcr.io/google-samples/hello-app:2.0"
+        env:
+        - name: "PORT"
+          value: "80"
 status: {}
